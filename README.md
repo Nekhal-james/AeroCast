@@ -50,7 +50,8 @@ A modern, full-stack weather probability application that analyzes historical NA
 │   ├── back-button.tsx   # Navigation back button
 │   └── loader.tsx        # Loading animation
 └── README.md
-🚀 Getting Started
+```
+# 🚀 Getting Started
 Prerequisites
 Node.js 18+ installed
 
@@ -82,7 +83,7 @@ The frontend will run on http://localhost:3000
 3. Open the Application
 Open your browser and navigate to http://localhost:3000
 
-📖 How to Use
+# 📖 How to Use
 Select Location: Click on the map or drag the marker to choose your target location.
 
 Choose Date: Pick a starting date for the analysis.
@@ -95,7 +96,7 @@ Month Details: Click any month on the chart to see specific threshold probabilit
 
 Navigate: Use the back button to reset and select a new location or date.
 
-🔌 API Endpoints
+# 🔌 API Endpoints
 GET /api/weather-probability
 Fetches a 10-month weather probability forecast.
 
@@ -133,7 +134,7 @@ JSON
     }
   ]
 }
-🎨 Color Palette
+# 🎨 Color Palette
 AeroCast features a custom purple-pink gradient design:
 
 Primary: #3E1E68 (Deep Purple)
@@ -144,7 +145,7 @@ Accent: #E45A92 (Pink)
 
 Light Accent: #FFACAC (Light Pink)
 
-📊 Data Source
+# 📊 Data Source
 Weather data is sourced from the NASA POWER API (Prediction Of Worldwide Energy Resources), providing:
 
 40 years of historical data (1985-2024).
@@ -153,10 +154,10 @@ Daily temperature, precipitation, and wind measurements.
 
 Global coverage with high-resolution accuracy.
 
-📄 License
+# 📄 License
 This project is licensed under the MIT License. Feel free to use, modify, and distribute it for your own purposes.
 
-🙌 Credits
+# 🙌 Credits
 NASA POWER API for providing the foundational weather data.
 
 Next.js & React for the robust framework architecture.
