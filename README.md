@@ -1,174 +1,129 @@
-# AeroCast - Weather Probability Analysis
+🌍 AeroCast — AI Weather Probability Engine
+7
 
-A modern, full-stack weather probability application that analyzes historical NASA data (1985-2024) to predict weather patterns for the next 10 months.
+AeroCast is a full-stack AI-powered weather analysis platform that transforms 40 years of NASA climate data into probabilistic forecasts for the next 10 months.
 
-## Features
+Not just weather prediction — probability intelligence for the atmosphere.
 
-- **Interactive Map Selection**: Choose any location worldwide using an interactive Leaflet map
-- **10-Month Forecast**: Get probability predictions for heat, rain, wind, and snow
-- **Historical Analysis**: Based on 40 years of NASA POWER API data
-- **Beautiful UI**: Modern design with smooth animations and custom color palette
-- **Detailed Month View**: Click any month to see detailed probability breakdowns
+🧠 Why AeroCast?
 
-## Tech Stack
+Traditional weather apps tell you:
 
-### Frontend
-- **Next.js 15** (App Router)
-- **React 19**
-- **TypeScript**
-- **Tailwind CSS v4**
-- **Recharts** for data visualization
-- **Leaflet** for interactive maps
-- **shadcn/ui** components
+“It will rain.”
 
-### Backend
-- **Node.js** with Express
-- **SQLite** for caching
-- **NASA POWER API** for historical weather data
-- **Axios** for API requests
+AeroCast tells you:
 
-## Project Structure
+“There’s a 45% probability of heavy rainfall based on 40 years of historical patterns.”
 
-\`\`\`
+This makes it useful for:
+
+🌾 Agriculture planning
+🏙️ Urban decision-making
+📊 Data-driven forecasting
+🧠 AI/ML experimentation
+✨ Core Features
+🌍 Interactive Global Map
+6
+Select any location worldwide
+Real-time coordinate-based analysis
+📊 10-Month Probability Forecast
+7
+Heat 🌡️
+Rain 🌧️
+Wind 🌬️
+Snow ❄️
+Based on long-term climate trends
+🔍 Deep Monthly Insights
+Click any month → get detailed breakdowns
+Understand why a probability exists, not just the number
+⚡ Fast + Cached Backend
+SQLite caching for faster responses
+Efficient NASA API integration
+🏗️ Architecture
+User تعامل → Next.js Frontend → Express API → NASA POWER API
+                                 ↓
+                              SQLite Cache
+🛠️ Tech Stack
+Frontend
+⚡ Next.js 15 (App Router)
+⚛️ React 19
+🎨 Tailwind CSS v4
+📊 Recharts
+🗺️ Leaflet
+🧩 shadcn/ui
+Backend
+🟢 Node.js + Express
+🗄️ SQLite (caching layer)
+🌍 NASA POWER API
+🔗 Axios
+📁 Project Structure
 /
-├── app/                      # Next.js app directory
-│   ├── page.tsx             # Home page with map and date selector
-│   ├── results/             # Results page
-│   │   └── page.tsx         # 10-month forecast display
-│   ├── layout.tsx           # Root layout
-│   └── globals.css          # Global styles with custom color palette
-├── backend/                  # Express backend server
-│   ├── server.js            # Main server file with NASA API integration
-│   ├── database.js          # SQLite database setup
-│   ├── package.json         # Backend dependencies
-│   └── .env.example         # Environment variables template
-├── components/              # React components
-│   ├── map-selector.tsx     # Interactive map component
-│   ├── weather-chart.tsx    # 10-month probability chart
-│   ├── month-detail.tsx     # Detailed month view
-│   ├── animated-button.tsx  # Custom animated button
-│   ├── back-button.tsx      # Navigation back button
-│   └── loader.tsx           # Loading animation
+├── app/                # Next.js frontend
+├── backend/            # Express server
+├── components/         # UI components
 └── README.md
-\`\`\`
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ installed
-- npm or yarn package manager
-
-### 1. Backend Setup
-
-Navigate to the backend directory and install dependencies:
-
-\`\`\`bash
+⚡ Quick Start
+1. Clone the repo
+git clone https://github.com/Nekhal-james/AeroCast.git
+cd AeroCast
+2. Run Backend
 cd backend
 npm install
-\`\`\`
-
-Start the backend server:
-
-\`\`\`bash
 npm start
-\`\`\`
-
-The backend will run on `http://localhost:3001`
-
-### 2. Frontend Setup
-
-In a new terminal, install frontend dependencies from the root directory:
-
-\`\`\`bash
+3. Run Frontend
 npm install
-\`\`\`
-
-Start the Next.js development server:
-
-\`\`\`bash
 npm run dev
-\`\`\`
+4. Open App
+http://localhost:3000
+🧪 How It Works
+User selects location + date
+Backend fetches historical NASA data (1985–2024)
+Data is analyzed to compute probability distributions
+Results are cached + visualized
+📡 API Endpoint
+/api/weather-probability
 
-The frontend will run on `http://localhost:3000`
+Params
 
-### 3. Open the Application
+lat
+lon
+date
 
-Open your browser and navigate to `http://localhost:3000`
+Returns:
 
-## How to Use
+10-month probabilistic forecast
+Detailed explanations per weather type
+🎨 Design System
+Role	Color
+Primary	#3E1E68
+Secondary	#5D2F77
+Accent	#E45A92
+Soft Tone	#FFACAC
+🌐 Data Source
 
-1. **Select Location**: Click on the map or drag the marker to choose your location
-2. **Choose Date**: Pick a starting date for the analysis
-3. **Analyze**: Click the "ANALYZE" button to fetch weather probabilities
-4. **View Results**: See the 10-month forecast with interactive charts
-5. **Month Details**: Click any month on the chart to see detailed breakdowns
-6. **Go Back**: Use the back button to select a new location or date
+Powered by NASA POWER API
 
-## API Endpoints
+40+ years of climate data
+Global coverage
+High reliability for research-grade analysis
+🚀 Future Improvements
+🤖 ML-based predictive models (LSTM / Time Series)
+🌐 Deployment (Vercel + cloud backend)
+📱 Mobile responsive PWA
+📊 Export reports (PDF / CSV)
+🧠 AI explanation engine (“Why this prediction?”)
+🧭 Vision
 
-### GET `/api/weather-probability`
+AeroCast aims to become:
 
-Fetches 10-month weather probability forecast.
+A decision intelligence platform for weather, not just a forecast tool.
 
-**Query Parameters:**
-- `lat` (required): Latitude
-- `lon` (required): Longitude  
-- `date` (required): Starting date (YYYY-MM-DD format)
+📜 License
 
-**Response:**
-\`\`\`json
-{
-  "location": { "lat": 40.7128, "lon": -74.0060 },
-  "startDate": "2025-01-15",
-  "monthlyForecasts": [
-    {
-      "month": 1,
-      "date": "2025-01-15",
-      "monthName": "January 2025",
-      "probabilities": {
-        "heat": 15,
-        "rain": 45,
-        "wind": 30,
-        "snow": 25
-      },
-      "details": {
-        "heat": "15% chance of extreme heat (>35°C)",
-        "rain": "45% chance of heavy rainfall (>20mm)",
-        "wind": "30% chance of strong winds (>13.8m/s)",
-        "snow": "25% chance of snow conditions"
-      }
-    }
-    // ... 9 more months
-  ]
-}
-\`\`\`
+MIT — free to use, modify, and build upon.
 
-## Color Palette
+🙌 Author
 
-The application uses a custom purple-pink gradient palette:
+Built by Nekhal James
 
-- **Primary**: `#3E1E68` (Deep Purple)
-- **Secondary**: `#5D2F77` (Medium Purple)
-- **Accent**: `#E45A92` (Pink)
-- **Light Accent**: `#FFACAC` (Light Pink)
-
-## Data Source
-
-Weather data is sourced from the **NASA POWER API** (Prediction Of Worldwide Energy Resources), which provides:
-- 40 years of historical data (1985-2024)
-- Daily temperature, precipitation, and wind measurements
-- Global coverage with high accuracy
-
-## License
-
-MIT License - feel free to use this project for your own purposes.
-
-## Credits
-
-- NASA POWER API for weather data
-- Design inspiration from modern weather applications
-- Built with Next.js and React
-\`\`\`
-
-```json file="" isHidden
+Turning data into intelligence.
